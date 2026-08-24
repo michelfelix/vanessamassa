@@ -20,12 +20,9 @@ $blog_page_id = get_option( 'page_for_posts' );
             </div>
 
             <div class="hero-media">
-                <div class="hero-shape" aria-hidden="true"></div>
-                <?php if ( has_post_thumbnail() ) : ?>
-                    <?php the_post_thumbnail( 'large', array( 'class' => 'hero-image' ) ); ?>
-                <?php else : ?>
-                    <div class="hero-image" style="background:#ffffff;"></div>
-                <?php endif; ?>
+                    <div class="hero-image">
+                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2026/08/perfil1-scaled.jpg" alt="Foto do perfil" />
+                    </div>
             </div>
         </div>
     </section>
@@ -37,7 +34,7 @@ $blog_page_id = get_option( 'page_for_posts' );
                 <?php if ( has_post_thumbnail() ) : ?>
                     <?php the_post_thumbnail( 'large' ); ?>
                 <?php else : ?>
-                    <div style="aspect-ratio:4/5;background:#fff0f9;border-radius:32px;"></div>
+                    <div style="aspect-ratio:4/5;background:#55692C;border-radius:32px;"></div>
                 <?php endif; ?>
             </div>
 
@@ -130,7 +127,7 @@ $blog_page_id = get_option( 'page_for_posts' );
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <?php the_post_thumbnail( 'medium_large', array( 'class' => 'card-image' ) ); ?>
                             <?php else : ?>
-                                <div class="card-image" style="background:#fff0f9;"></div>
+                                <div class="card-image" style="background:#55692C;"></div>
                             <?php endif; ?>
 
                             <div class="card-content">

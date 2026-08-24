@@ -9,8 +9,8 @@ Text Domain: estetica-institucional
 */
 
 :root {
-    --color-primary: #fff0f9;
-    --color-secondary: #000000;
+    --color-primary: #55692C;
+    --color-secondary: #f5c648;
     --color-tertiary: #ffffff;
 
     --color-text: #000000;
@@ -230,7 +230,7 @@ a {
 .hero-description {
     max-width: 520px;
     margin-bottom: 30px;
-    color: var(--color-muted);
+    color: var(--color-text);
     font-size: 1.05rem;
 }
 
@@ -254,9 +254,13 @@ a {
 .hero-image {
     position: relative;
     z-index: 2;
-    width: min(80%, 510px);
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-height: 700px;
     border-radius: var(--radius-lg);
 }
 
