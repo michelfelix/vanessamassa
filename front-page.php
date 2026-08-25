@@ -21,7 +21,7 @@ $blog_page_id = get_option( 'page_for_posts' );
 
             <div class="hero-media">
                     <div class="hero-image">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2026/08/perfil1-scaled.jpg" alt="Foto do perfil" />
+                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2026/08/perfil2.jpg" alt="Foto do perfil" />
                     </div>
             </div>
         </div>

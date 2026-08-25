@@ -274,6 +274,10 @@ a {
     background: var(--color-primary);
     border-radius: var(--radius-lg);
     transform: rotate(-3deg);
+    background-image: url(http://localhost:81/vanessamassa/wp-content/uploads/2026/08/perfil1-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .about-media img {
