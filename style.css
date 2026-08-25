@@ -438,6 +438,9 @@ a {
         margin-left: auto;
     }
 
+    .menu-toggle span {
+        color: var(--color-text-light-bg);
+    }
     .site-header.menu-open .main-navigation {
         position: absolute;
         top: calc(100% + 10px);
