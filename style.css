@@ -9,11 +9,12 @@ Text Domain: estetica-institucional
 */
 
 :root {
-    --color-primary: #55692C;
+    --color-primary: #2B3920;
     --color-secondary: #f5c648;
     --color-tertiary: #ffffff;
 
-    --color-text: #000000;
+    --color-text-light-bg: #000000;
+    --color-text-dark-bg: #f5c648;
     --color-muted: #5f555b;
     --color-border: rgba(0, 0, 0, 0.08);
     --color-overlay: rgba(255, 240, 249, 0.78);
@@ -40,7 +41,7 @@ html {
 
 body {
     margin: 0;
-    color: var(--color-text);
+    color: var(--color-text-light-bg);
     background: var(--color-tertiary);
     font-family: var(--font-body);
     line-height: 1.6;
@@ -99,7 +100,7 @@ a {
     border-top: 0;
 }
 
-.site-brand {
+.custom-logo-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -109,9 +110,10 @@ a {
     white-space: nowrap;
 }
 
-.site-brand img {
-    max-height: 48px;
+.custom-logo-link img {
+    max-height: 75px;
     width: auto;
+    border-radius: 15px;
 }
 
 .main-navigation {
@@ -160,8 +162,7 @@ a {
 }
 
 .button:hover {
-    transform: translateY(-2px);
-    opacity: 0.88;
+    filter: brightness(0.95);
 }
 
 .button--light {
@@ -175,6 +176,7 @@ a {
 
 .section--primary {
     background: var(--color-primary);
+    color: var(--color-text-dark-bg);
 }
 
 .section-kicker {
@@ -188,7 +190,7 @@ a {
 .section-title {
     margin: 0 0 20px;
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
     line-height: 1.08;
     font-weight: 400;
 }
@@ -205,6 +207,7 @@ a {
     padding: 150px 0 100px;
     background: var(--color-primary);
     overflow: hidden;
+    color: var(--color-text-dark-bg);
 }
 
 .hero-grid {
@@ -230,7 +233,6 @@ a {
 .hero-description {
     max-width: 520px;
     margin-bottom: 30px;
-    color: var(--color-text);
     font-size: 1.05rem;
 }
 
@@ -239,16 +241,6 @@ a {
     min-height: 520px;
     display: grid;
     place-items: center;
-}
-
-.hero-shape {
-    position: absolute;
-    width: 76%;
-    height: 78%;
-    background: var(--color-tertiary);
-    border-radius: var(--radius-lg);
-    transform: rotate(3deg);
-    box-shadow: var(--shadow-soft);
 }
 
 .hero-image {
@@ -306,6 +298,7 @@ a {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    color: var(--color-text-light-bg);
 }
 
 .card-image {
@@ -363,6 +356,7 @@ a {
     gap: 30px;
     background: var(--color-primary);
     border-radius: var(--radius-lg);
+    color: var(--color-text-dark-bg);
 }
 
 .cta h2 {
@@ -374,13 +368,12 @@ a {
 
 .cta p {
     margin: 0;
-    color: var(--color-muted);
 }
 
 .site-footer {
     padding: 70px 0 24px;
-    color: var(--color-tertiary);
-    background: var(--color-secondary);
+    color: var(--color-text-dark-bg);
+    background: var(--color-primary);
 }
 
 .footer-grid {
@@ -514,7 +507,7 @@ a {
         min-height: 62px;
     }
 
-    .site-brand {
+    .custom-logo-link {
         font-size: 1rem;
     }
 

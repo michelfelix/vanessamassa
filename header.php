@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <header class="site-header" id="site-header">
     <div class="header-inner">
-        <a class="site-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php bloginfo( 'name' ); ?>">
             <?php
             if ( has_custom_logo() ) {
                 the_custom_logo();
@@ -24,7 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 bloginfo( 'name' );
             }
             ?>
-        </a>
 
         <nav class="main-navigation" id="main-navigation" aria-label="<?php esc_attr_e( 'Menu principal', 'estetica-institucional' ); ?>">
             <?php
@@ -53,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function estetica_fallback_menu() {
     ?>
     <ul>
-        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/#inicio' ) ); ?>">Início</a></li>
         <li><a href="<?php echo esc_url( home_url( '/#sobre' ) ); ?>">Sobre</a></li>
         <li><a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>">Blog</a></li>
         <li><a href="<?php echo estetica_booking_url(); ?>">Fale conosco</a></li>

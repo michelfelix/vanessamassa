@@ -40,14 +40,15 @@ $blog_page_id = get_option( 'page_for_posts' );
 
             <div>
                 <p class="section-kicker">Sobre mim</p>
-                <h2 class="section-title">Muito prazer, sou [Nome da profissional]</h2>
+                <h2 class="section-title">Muito prazer, sou a dra. Vanessa Massa</h2>
                 <p class="section-lead">
-                    Escreva aqui uma apresentação curta, humana e profissional.
-                    Conte sua especialidade, experiência e principalmente o que torna
-                    seu atendimento diferente.
-                </p>
-                <p>
-                    Esse texto pode crescer futuramente em uma página completa de apresentação.
+                    Sou biomédica Esteta com mais de 6 anos de experiência na área da saúde estética. Minha missão é proporcionar cuidados personalizados que realcem a beleza natural de cada paciente, promovendo bem-estar e confiança.<br/>
+                    <br/>
+                    Comprometida com a excelência técnica e a naturalidade dos resultados, já realizei mais de 1000 atendimentos, sempre pautados em avaliação criteriosa, segurança e protocolos individualizados.<br/>
+                    <br/>
+                    Sou especialista em harmonização facial e corporal, possuo domínio em tecnologias de última feração como Ultraformer MPT, Exio, Lavieen e Etherea.<br/>
+                    <br/>
+                    Acredito que o papel da estética é valorizar traços, respeitar individualidades e promover o bem-estar com responsabilidade. Cada paciente é único, e meu compromisso é oferecer soluções que realcem sua melhor versão de forma natural e segura.
                 </p>
             </div>
         </div>
