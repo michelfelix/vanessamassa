@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="instagram-feed container">
-    <div>
-        <h2>
+    <div class="instagram-feed-heading">
+        <h2 class="section-title">
             Confira nossas últimas publicações no Instagram
         </h2>
     </div>

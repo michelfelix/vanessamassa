@@ -363,7 +363,7 @@ a {
     color: var(--color-text-dark-bg);
 }
 
-h2 {
+.cta h2 {
     margin: 0 0 8px;
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
