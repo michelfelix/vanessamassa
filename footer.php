@@ -4,6 +4,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
+<div class="instagram-feed container">
+    <div>
+        <h2>
+            Confira nossas últimas publicações no Instagram
+        </h2>
+    </div>
+    <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
+</div>
+
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
