@@ -12,14 +12,22 @@ get_header();
             <p class="section-kicker">Blog</p>
 
             <h1 class="section-title">
-                <?php single_cat_title(); ?>
+                Todos os Artigos
             </h1>
 
-            <?php if ( have_posts() ) : ?>
+            <?php
+            $posts_query = new WP_Query([
+                'post_type'      => 'post',
+                'posts_per_page' => 10,
+                'paged'          => get_query_var( 'paged' ) ?: 1,
+            ]);
+            ?>
+
+            <?php if ( $posts_query->have_posts() ) : ?>
 
                 <div class="blog-grid">
 
-                    <?php while ( have_posts() ) : the_post(); ?>
+                    <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
 
                         <article class="card">
 

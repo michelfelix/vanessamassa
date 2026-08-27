@@ -3,6 +3,8 @@ get_header();
 ?>
 
 <main class="blog-page">
+    <?php get_template_part( 'template-parts/blog-sidebar' ); ?>
+
     <article class="section">
         <div class="container entry-content">
             <?php while ( have_posts() ) : the_post(); ?>

@@ -31,11 +31,7 @@ $blog_page_id = get_option( 'page_for_posts' );
         <div class="container about-grid">
             <div class="about-media">
                 <div aria-hidden="true"></div>
-                <?php if ( has_post_thumbnail() ) : ?>
-                    <?php the_post_thumbnail( 'large' ); ?>
-                <?php else : ?>
-                    <div style="aspect-ratio:4/5;background:#55692C;border-radius:32px;"></div>
-                <?php endif; ?>
+                <div style="aspect-ratio:4/5;background:#55692C;border-radius:32px;"></div>
             </div>
 
             <div>
@@ -135,7 +131,7 @@ $blog_page_id = get_option( 'page_for_posts' );
                                 <div class="post-meta"><?php echo esc_html( get_the_date() ); ?></div>
                                 <h3 class="card-title"><?php the_title(); ?></h3>
                                 <p class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 18 ) ); ?></p>
-                                <a class="card-link" href="<?php the_permalink(); ?>">Ler mais →</a>
+                                <a class="card-link" href="<?php the_permalink(); ?>" target="_blank">Ler mais →</a>
                             </div>
                         </article>
                         <?php
