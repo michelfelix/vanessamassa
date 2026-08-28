@@ -29,6 +29,7 @@ $blog_page_id = get_option( 'page_for_posts' );
 
     <section class="section" id="sobre">
         <div class="container about-grid">
+            <?php echo '<style> .about-media::before { background-image: url("' . esc_url( home_url( '/wp-content/uploads/2026/08/perfil1-scaled.jpg' ) ) . '"); } </style>'; ?>
             <div class="about-media">
                 <div aria-hidden="true"></div>
                 <div style="aspect-ratio:4/5;background:#55692C;border-radius:32px;"></div>
