@@ -96,3 +96,5 @@ add_action( 'customize_register', 'estetica_institucional_customize_register' );
 function estetica_booking_url() {
     return esc_url( get_theme_mod( 'estetica_booking_url', '#agendamento' ) );
 }
+
+require_once get_template_directory() . '/data/procedures.php';

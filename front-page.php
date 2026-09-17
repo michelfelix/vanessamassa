@@ -57,37 +57,20 @@ $blog_page_id = get_option( 'page_for_posts' );
             <h2 class="section-title">Como posso te ajudar?</h2>
 
             <div class="procedures-grid">
-                <?php
-                $procedures = array(
-                    array(
-                        'title' => 'Procedimento 01',
-                        'text'  => 'Breve descrição do procedimento e seu principal benefício.',
-                    ),
-                    array(
-                        'title' => 'Procedimento 02',
-                        'text'  => 'Breve descrição do procedimento e seu principal benefício.',
-                    ),
-                    array(
-                        'title' => 'Procedimento 03',
-                        'text'  => 'Breve descrição do procedimento e seu principal benefício.',
-                    ),
-                );
-
-                foreach ( $procedures as $procedure ) :
-                    ?>
+                <?php foreach ( $procedures as $procedure ) : ?>
                     <article class="card">
-                        <div class="card-image" style="background:#ffffff;"></div>
+                        <div class="card-image" style="background:#ffffff;">
+                            <img src="<?php echo esc_url( home_url() ) . esc_url( $procedure['image'] ); ?>" alt="<?php echo esc_attr( $procedure['title'] ); ?>" />
+                        </div>
                         <div class="card-content">
                             <h3 class="card-title"><?php echo esc_html( $procedure['title'] ); ?></h3>
-                            <p class="card-text"><?php echo esc_html( $procedure['text'] ); ?></p>
-                            <a class="card-link" href="<?php echo esc_url( home_url( '/procedimentos/' ) ); ?>">
+                            <!--<p class="card-text"><?//php echo esc_html( $procedure['text'] ); ?></p>-->
+                            <a class="card-link" href="<?php echo esc_url( home_url( $procedure['url'] ) ); ?>">
                                 Saiba mais →
                             </a>
                         </div>
                     </article>
-                    <?php
-                endforeach;
-                ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
