@@ -58,18 +58,20 @@ $blog_page_id = get_option( 'page_for_posts' );
 
             <div class="procedures-grid">
                 <?php foreach ( $procedures as $procedure ) : ?>
-                    <article class="card">
-                        <div class="card-image" style="background:#ffffff;">
-                            <img src="<?php echo esc_url( home_url() ) . esc_url( $procedure['image'] ); ?>" alt="<?php echo esc_attr( $procedure['title'] ); ?>" />
-                        </div>
-                        <div class="card-content">
-                            <h3 class="card-title"><?php echo esc_html( $procedure['title'] ); ?></h3>
-                            <!--<p class="card-text"><?//php echo esc_html( $procedure['text'] ); ?></p>-->
-                            <a class="card-link" href="<?php echo esc_url( home_url( $procedure['url'] ) ); ?>">
-                                Saiba mais →
-                            </a>
-                        </div>
-                    </article>
+                    <a class="card-link" href="<?php echo esc_url( home_url( $procedure['url'] ) ); ?>">
+                        <article class="card">
+                            <div class="card-image" style="background:#ffffff;">
+                                <img src="<?php echo esc_url( home_url() ) . esc_url( $procedure['image'] ); ?>" alt="<?php echo esc_attr( $procedure['title'] ); ?>" />
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title"><?php echo esc_html( $procedure['title'] ); ?></h3>
+                                <!--<p class="card-text"><?//php echo esc_html( $procedure['text'] ); ?></p>-->
+                                    <p>
+                                        Saiba mais →
+                                    </p>
+                            </div>
+                        </article>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -104,20 +106,22 @@ $blog_page_id = get_option( 'page_for_posts' );
                     while ( $posts->have_posts() ) :
                         $posts->the_post();
                         ?>
-                        <article class="card">
-                            <?php if ( has_post_thumbnail() ) : ?>
-                                <?php the_post_thumbnail( 'medium_large', array( 'class' => 'card-image' ) ); ?>
-                            <?php else : ?>
-                                <div class="card-image" style="background:#55692C;"></div>
-                            <?php endif; ?>
+                        <a class="card-link" href="<?php the_permalink(); ?>" target="_blank">
+                            <article class="card">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <?php the_post_thumbnail( 'medium_large', array( 'class' => 'card-image' ) ); ?>
+                                <?php else : ?>
+                                    <div class="card-image" style="background:#55692C;"></div>
+                                <?php endif; ?>
 
-                            <div class="card-content">
-                                <div class="post-meta"><?php echo esc_html( get_the_date() ); ?></div>
-                                <h3 class="card-title"><?php the_title(); ?></h3>
-                                <p class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 18 ) ); ?></p>
-                                <a class="card-link" href="<?php the_permalink(); ?>" target="_blank">Ler mais →</a>
-                            </div>
-                        </article>
+                                <div class="card-content">
+                                    <div class="post-meta"><?php echo esc_html( get_the_date() ); ?></div>
+                                    <h3 class="card-title"><?php the_title(); ?></h3>
+                                    <p class="card-text"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 18 ) ); ?></p>    
+                                    <p>Ler mais →</p>
+                                </div>
+                            </article>
+                        </a>
                         <?php
                     endwhile;
                     wp_reset_postdata();

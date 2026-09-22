@@ -309,10 +309,25 @@ a {
     color: var(--color-text-light-bg);
 }
 
+.posts-grid .card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease;
+}
+
 .card-image {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+}
+
+
+.procedures-grid .card-image img {
+    filter: brightness(0.3);
+    transition: filter 0.3s ease;
+}
+
+.procedures-grid .card:hover .card-image img {
+    filter: brightness(1);
 }
 
 .card-content {
@@ -331,7 +346,9 @@ a {
     color: var(--color-muted);
 }
 
-.card a {
+
+.card-content p {
+    color: var(--color-text-light-bg);
     font-size: 0.82rem;
     font-weight: 800;
     text-transform: uppercase;
