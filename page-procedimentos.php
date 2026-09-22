@@ -5,7 +5,7 @@
     <h1 class="section-title">Procedimentos</h1>
     <?php foreach ( $procedures as $index => $procedure ) : ?>
 
-        <article class="procedure-item">
+        <article id="<?php echo esc_attr( rtrim( parse_url( $procedure['url'], PHP_URL_FRAGMENT ), '/' ) ); ?>" class="procedure-item">
 
             <div class="procedure-image">
                 <img src="<?php echo esc_url( home_url() ) . esc_url( $procedure['image'] ); ?>" alt="<?php echo esc_attr( $procedure['title'] ); ?>" />
