@@ -13,6 +13,15 @@ if ( ! defined( 'ABSPATH' ) ) {
     <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
 </div>
 
+<div class="social-bar">
+    <a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
+
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
@@ -68,17 +77,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div>
                 <h2 class="footer-title">Contato</h2>
-
-                <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
-                    <p>WhatsApp<br><?php echo esc_html( get_theme_mod( 'estetica_whatsapp' ) ); ?></p>
-                <?php endif; ?>
-
                 <?php if ( get_theme_mod( 'estetica_address' ) ) : ?>
                     <p><?php echo nl2br( esc_html( get_theme_mod( 'estetica_address' ) ) ); ?></p>
                 <?php endif; ?>
 
+                <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
+                    <p><a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">WhatsApp&nbsp;<i class="fa-brands fa-whatsapp"></i></a></p>
+                <?php endif; ?>
+
                 <?php if ( get_theme_mod( 'estetica_instagram' ) ) : ?>
-                    <p><a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">Instagram</a></p>
+                    <p><a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">Instagram&nbsp;<i class="fa-brands fa-instagram"></i></a></p>
                 <?php endif; ?>
 
                 <a class="button" href="<?php echo estetica_booking_url(); ?>">
