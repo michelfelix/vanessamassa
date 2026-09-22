@@ -43,7 +43,7 @@ $blog_page_id = get_option( 'page_for_posts' );
                     <br/>
                     Comprometida com a excelência técnica e a naturalidade dos resultados, já realizei mais de 1000 atendimentos, sempre pautados em avaliação criteriosa, segurança e protocolos individualizados.<br/>
                     <br/>
-                    Sou especialista em harmonização facial e corporal, possuo domínio em tecnologias de última geração como Ultraformer MPT, Exion, Lavieen e Etherea.<br/>
+                    Sou especialista em harmonização facial e corporal, possuo domínio em tecnologias de última geração como Ultraformer MPT, Radiofrequência microagulhada, Lavieen e Etherea.<br/>
                     <br/>
                     Acredito que o papel da estética é valorizar traços, respeitar individualidades e promover o bem-estar com responsabilidade. Cada paciente é único, e meu compromisso é oferecer soluções que realcem sua melhor versão de forma natural e segura.
                 </p>
