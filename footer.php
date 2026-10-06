@@ -97,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <div class="footer-bottom">
             <span>&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. Todos os direitos reservados.</span>
-            <span>Desenvolvido com carinho.</span>
+            <span>Desenvolvido por <a href="https://linkedin.com/in/michelfelixdias" target="_blank">Michel Felix Dias</a>.</span>
         </div>
     </div>
 </footer>
