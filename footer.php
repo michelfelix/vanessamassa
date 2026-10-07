@@ -89,9 +89,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <p><a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">Instagram&nbsp;<i class="fa-brands fa-instagram"></i></a></p>
                 <?php endif; ?>
 
-                <!-- <a class="button" href="<//?php echo estetica_booking_url(); ?>">
+                <a class="button" href="<?php echo estetica_booking_url(); ?>" target="_blank" rel="noopener">
                     Agende sua consulta
-                </a> -->
+                </a>
             </div>
         </div>
 

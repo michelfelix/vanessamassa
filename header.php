@@ -40,9 +40,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             ?>
         </nav>
 
-        <!-- <a class="button header-cta" href="<//?php echo estetica_booking_url(); ?>">
+        <a class="button header-cta" href="<?php echo estetica_booking_url(); ?>" target="_blank" rel="noopener">
             Agende sua consulta
-        </a> -->
+        </a>
 
         <button class="menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false">
             <span aria-hidden="true">☰</span>

@@ -142,7 +142,7 @@ $blog_page_id = get_option( 'page_for_posts' );
                     <h2>Pronta para realçar sua melhor versão?</h2>
                     <p>Agende sua consulta e vamos cuidar de você.</p>
                 </div>
-                <a class="button" href="<?php echo estetica_booking_url(); ?>">
+                <a class="button" href="<?php echo estetica_booking_url(); ?>"  target="_blank" rel="noopener">
                     Agende sua consulta
                 </a>
             </div>
