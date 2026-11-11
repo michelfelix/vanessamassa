@@ -32,14 +32,15 @@ function estetica_institucional_assets() {
         'estetica-institucional-style',
         get_stylesheet_uri(),
         array(),
-        wp_get_theme()->get( 'Version' )
+        // Versão = data de modificação do arquivo: muda a cada deploy e evita CSS antigo em cache.
+        filemtime( get_stylesheet_directory() . '/style.css' )
     );
 
     wp_enqueue_script(
         'estetica-institucional-script',
         get_template_directory_uri() . '/assets/js/main.js',
         array(),
-        wp_get_theme()->get( 'Version' ),
+        filemtime( get_template_directory() . '/assets/js/main.js' ),
         true
     );
 }
