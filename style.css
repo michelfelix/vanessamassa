@@ -1053,3 +1053,16 @@ a {
     font-family: var(--font-body);
     font-weight: 400;
 }
+
+/* Imagem do procedimento: mesma proporção para todas (2:3), cortando com cover */
+.procedure-hero-image img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 900px) {
+    .procedure-hero-image img {
+        aspect-ratio: 4 / 5;
+    }
+}
