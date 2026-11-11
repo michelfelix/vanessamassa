@@ -74,17 +74,12 @@ $city         = get_theme_mod( 'estetica_city', 'São Paulo' );
             <div class="cta">
                 <div>
                     <h2>Ficou com alguma dúvida?</h2>
-                    <p>Agende sua avaliação ou fale comigo pelo WhatsApp.</p>
+                    <p>Agende sua avaliação e tire todas as suas dúvidas.</p>
                 </div>
                 <div class="cta-actions">
                     <a class="button" href="<?php echo estetica_booking_url(); ?>" target="_blank" rel="noopener">
                         Agende sua avaliação
                     </a>
-                    <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
-                        <a class="button button--light" href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=<?php echo rawurlencode( 'Olá, gostaria de saber mais sobre ' . get_the_title() . '.' ); ?>" target="_blank" rel="noopener">
-                            WhatsApp
-                        </a>
-                    <?php endif; ?>
                 </div>
             </div>
         </div>
