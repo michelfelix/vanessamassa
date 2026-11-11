@@ -1046,3 +1046,10 @@ a {
 .faq-answer p:last-child {
     margin-bottom: 0;
 }
+
+/* Títulos das páginas de procedimento na fonte do corpo, como na página Procedimentos */
+.procedure-hero .section-title,
+.procedure-body h2 {
+    font-family: var(--font-body);
+    font-weight: 400;
+}
