@@ -1141,3 +1141,31 @@ a {
         padding: 24px;
     }
 }
+
+/* Ícones SVG (substituem o Font Awesome) */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
+}
+
+.social-bar a {
+    display: flex;
+    color: var(--color-primary);
+}
+
+.social-bar .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-bar a:hover .icon {
+    transform: scale(1.05);
+}
+
+/* Instagram na home */
+.instagram-section {
+    padding-top: 0;
+}

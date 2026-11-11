@@ -21,7 +21,18 @@ $blog_page_id = get_option( 'page_for_posts' );
 
             <div class="hero-media">
                     <div class="hero-image">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2026/08/perfil2.jpg" alt="Dra. Vanessa Massa, biomédica esteta na Vila Madalena, São Paulo" />
+                        <?php
+                        echo estetica_media_image(
+                            '/wp-content/uploads/2026/08/perfil2.jpg',
+                            'large',
+                            array(
+                                'alt'           => 'Dra. Vanessa Massa, biomédica esteta na Vila Madalena, São Paulo',
+                                'sizes'         => '(max-width: 900px) 90vw, 420px',
+                                'loading'       => 'eager',
+                                'fetchpriority' => 'high',
+                            )
+                        );
+                        ?>
                     </div>
             </div>
         </div>
@@ -29,7 +40,7 @@ $blog_page_id = get_option( 'page_for_posts' );
 
     <section class="section" id="sobre">
         <div class="container about-grid">
-            <?php echo '<style> .about-media::before { background-image: url("' . esc_url( home_url( '/wp-content/uploads/2026/08/perfil1-scaled.jpg' ) ) . '"); } </style>'; ?>
+            <?php echo '<style> .about-media::before { background-image: url("' . esc_url( estetica_media_url( '/wp-content/uploads/2026/08/perfil1-scaled.jpg', 'large' ) ) . '"); } </style>'; ?>
             <div class="about-media">
                 <div aria-hidden="true"></div>
                 <div style="aspect-ratio:4/5;background:#55692C;border-radius:32px;"></div>
@@ -183,6 +194,16 @@ $blog_page_id = get_option( 'page_for_posts' );
             </div>
         </section>
     <?php endif; ?>
+    <section class="section instagram-section" id="instagram">
+        <div class="container instagram-feed">
+            <div class="instagram-feed-heading">
+                <h2 class="section-title">
+                    Confira nossas últimas publicações no Instagram
+                </h2>
+            </div>
+            <?php echo do_shortcode( '[instagram-feed feed=1]' ); ?>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>

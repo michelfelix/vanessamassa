@@ -4,21 +4,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="instagram-feed container">
-    <div class="instagram-feed-heading">
-        <h2 class="section-title">
-            Confira nossas últimas publicações no Instagram
-        </h2>
-    </div>
-    <?php echo do_shortcode('[instagram-feed feed=1]'); ?>
-</div>
-
 <div class="social-bar">
-    <a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">
-        <i class="fa-brands fa-instagram"></i>
+    <a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener" aria-label="Instagram">
+        <?php echo estetica_icon( 'instagram' ); ?>
     </a>
-    <a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener" aria-label="WhatsApp">
+        <?php echo estetica_icon( 'whatsapp' ); ?>
     </a>
 </div>
 
@@ -85,15 +76,15 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php endif; ?>
 
                 <?php if ( estetica_directions_url() ) : ?>
-                    <p><a href="<?php echo esc_url( estetica_directions_url() ); ?>" target="_blank" rel="noopener">Como chegar&nbsp;<i class="fa-solid fa-location-dot"></i></a></p>
+                    <p><a href="<?php echo esc_url( estetica_directions_url() ); ?>" target="_blank" rel="noopener">Como chegar&nbsp;<?php echo estetica_icon( 'location' ); ?></a></p>
                 <?php endif; ?>
 
                 <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
-                    <p><a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">WhatsApp&nbsp;<i class="fa-brands fa-whatsapp"></i></a></p>
+                    <p><a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">WhatsApp&nbsp;<?php echo estetica_icon( 'whatsapp' ); ?></a></p>
                 <?php endif; ?>
 
                 <?php if ( get_theme_mod( 'estetica_instagram' ) ) : ?>
-                    <p><a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">Instagram&nbsp;<i class="fa-brands fa-instagram"></i></a></p>
+                    <p><a href="<?php echo esc_url( get_theme_mod( 'estetica_instagram' ) ); ?>" target="_blank" rel="noopener">Instagram&nbsp;<?php echo estetica_icon( 'instagram' ); ?></a></p>
                 <?php endif; ?>
 
                 <a class="button" href="<?php echo estetica_booking_url(); ?>" target="_blank" rel="noopener">

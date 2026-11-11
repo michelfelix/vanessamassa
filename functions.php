@@ -129,6 +129,38 @@ function estetica_booking_url() {
 }
 
 require_once get_template_directory() . '/data/procedures.php';
+require_once get_template_directory() . '/inc/icons.php';
+
+/**
+ * Imagem da biblioteca de mídia a partir do caminho em /wp-content/uploads,
+ * já com srcset (o navegador baixa só o tamanho necessário).
+ * Se a imagem não estiver na biblioteca, cai no <img> simples.
+ */
+function estetica_media_image( $path, $size, $attrs = array() ) {
+    $url = home_url( $path );
+    $id  = attachment_url_to_postid( $url );
+
+    if ( $id ) {
+        return wp_get_attachment_image( $id, $size, false, $attrs );
+    }
+
+    $html = '<img src="' . esc_url( $url ) . '"';
+    foreach ( $attrs as $key => $value ) {
+        $html .= ' ' . esc_attr( $key ) . '="' . esc_attr( $value ) . '"';
+    }
+    return $html . ' />';
+}
+
+function estetica_media_url( $path, $size ) {
+    $id = attachment_url_to_postid( home_url( $path ) );
+    if ( $id ) {
+        $src = wp_get_attachment_image_url( $id, $size );
+        if ( $src ) {
+            return $src;
+        }
+    }
+    return home_url( $path );
+}
 /* -------------------------------------------------------------------------
  * SEO local: endereço, mapa, páginas de procedimento e schema.org
  * ---------------------------------------------------------------------- */
@@ -307,7 +339,7 @@ function estetica_local_business_schema() {
         'alternateName' => get_bloginfo( 'name' ),
         'description' => 'Biomédica esteta na ' . $neighborhood . ', ' . $city . '. Harmonização facial e corporal: ' . implode( ', ', $procedure_names ) . '.',
         'url'         => $home,
-        'image'       => home_url( '/wp-content/uploads/2026/08/perfil2.jpg' ),
+        'image'       => estetica_media_url( '/wp-content/uploads/2026/08/perfil2.jpg', 'large' ),
         'address'     => $address,
         'areaServed'  => array(
             array( '@type' => 'Place', 'name' => $neighborhood . ', ' . $city ),

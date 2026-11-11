@@ -72,7 +72,17 @@ $city         = get_theme_mod( 'estetica_city', 'São Paulo' );
     <section class="procedure-author">
         <div class="container">
             <div class="author-box">
-                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/08/perfil2.jpg' ) ); ?>" alt="Dra. Vanessa Massa, biomédica esteta" loading="lazy" width="96" height="96" />
+                <?php
+                echo estetica_media_image(
+                    '/wp-content/uploads/2026/08/perfil2.jpg',
+                    'thumbnail',
+                    array(
+                        'alt'     => 'Dra. Vanessa Massa, biomédica esteta',
+                        'loading' => 'lazy',
+                        'sizes'   => '96px',
+                    )
+                );
+                ?>
                 <div>
                     <p class="section-kicker">Responsável técnica</p>
                     <p class="author-name">Dra. Vanessa Massa</p>
