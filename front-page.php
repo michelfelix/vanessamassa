@@ -8,7 +8,7 @@ $blog_page_id = get_option( 'page_for_posts' );
     <section class="hero" id="inicio">
         <div class="container hero-grid">
             <div class="hero-content">
-                <p class="section-kicker">Bem-vinda ao meu espaço</p>
+                <p class="section-kicker">Biomédica esteta na Vila Madalena · São Paulo</p>
                 <h1 class="hero-title">Realce sua beleza, revele sua essência.</h1>
                 <p class="hero-description">
                     Cuidados personalizados para realçar sua melhor versão com naturalidade,
@@ -21,7 +21,7 @@ $blog_page_id = get_option( 'page_for_posts' );
 
             <div class="hero-media">
                     <div class="hero-image">
-                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2026/08/perfil2.jpg" alt="Foto do perfil" />
+                        <img src="<?php echo home_url(); ?>/wp-content/uploads/2026/08/perfil2.jpg" alt="Dra. Vanessa Massa, biomédica esteta na Vila Madalena, São Paulo" />
                     </div>
             </div>
         </div>
@@ -58,10 +58,10 @@ $blog_page_id = get_option( 'page_for_posts' );
 
             <div class="procedures-grid">
                 <?php foreach ( $procedures as $procedure ) : ?>
-                    <a class="card-link" href="<?php echo esc_url( home_url( $procedure['url'] ) ); ?>">
+                    <a class="card-link" href="<?php echo esc_url( estetica_procedure_url( $procedure ) ); ?>">
                         <article class="card">
                             <div class="card-image" style="background:#ffffff;">
-                                <img src="<?php echo esc_url( home_url() ) . esc_url( $procedure['image'] ); ?>" alt="<?php echo esc_attr( $procedure['title'] ); ?>" />
+                                <img src="<?php echo esc_url( home_url() ) . esc_url( $procedure['image'] ); ?>" alt="<?php echo esc_attr( $procedure['title'] . ' na Vila Madalena – Dra. Vanessa Massa' ); ?>" loading="lazy" />
                             </div>
                             <div class="card-content">
                                 <h3 class="card-title"><?php echo esc_html( $procedure['title'] ); ?></h3>
@@ -148,6 +148,43 @@ $blog_page_id = get_option( 'page_for_posts' );
             </div>
         </div>
     </section>
+    <?php if ( estetica_map_embed_url() ) : ?>
+        <section class="section location" id="onde-estou">
+            <div class="container location-grid">
+                <div class="location-info">
+                    <p class="section-kicker">Onde estou</p>
+                    <h2 class="section-title">Consultório na <?php echo esc_html( get_theme_mod( 'estetica_neighborhood', 'Vila Madalena' ) ); ?></h2>
+                    <address>
+                        <?php echo esc_html( estetica_full_address() ); ?>
+                    </address>
+                    <p class="location-text">
+                        Atendimento com hora marcada, em um espaço pensado para o seu conforto.
+                    </p>
+                    <div class="location-actions">
+                        <?php if ( estetica_directions_url() ) : ?>
+                            <a class="button" href="<?php echo esc_url( estetica_directions_url() ); ?>" target="_blank" rel="noopener">
+                                Como chegar
+                            </a>
+                        <?php endif; ?>
+                        <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
+                            <a class="button button--outline" href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">
+                                WhatsApp
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
+                <div class="location-map">
+                    <iframe
+                        src="<?php echo esc_url( estetica_map_embed_url() ); ?>"
+                        title="Mapa: consultório da Dra. Vanessa Massa na <?php echo esc_attr( get_theme_mod( 'estetica_neighborhood', 'Vila Madalena' ) ); ?>"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

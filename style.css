@@ -785,3 +785,192 @@ a {
 }
 
 /* FIM PROCEDIMENTOS */
+/* INÍCIO ONDE ESTOU */
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.location address {
+    font-style: normal;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.location-text {
+    color: var(--color-muted);
+    margin: 0 0 28px;
+}
+
+.location-actions,
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button--outline {
+    background: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.location-map {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    aspect-ratio: 4 / 3;
+}
+
+.location-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* FIM ONDE ESTOU */
+
+/* INÍCIO PÁGINA DE PROCEDIMENTO */
+
+.procedures .section-kicker {
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.procedure-content .procedure-button {
+    margin-top: 4px;
+}
+
+.procedure-hero {
+    padding: 150px 0 40px;
+}
+
+.procedure-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.procedure-hero .section-title {
+    color: var(--color-primary);
+}
+
+.procedure-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    display: block;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 0.82rem;
+    color: var(--color-muted);
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.procedure-body {
+    padding-top: 40px;
+}
+
+.procedure-body .entry-content {
+    max-width: 820px;
+    line-height: 1.8;
+}
+
+.procedure-body h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: var(--color-primary);
+    margin: 48px 0 16px;
+}
+
+/* Bloco FAQ do Yoast */
+.schema-faq {
+    margin-top: 16px;
+}
+
+.schema-faq-section {
+    border-bottom: 1px solid var(--color-border);
+    padding: 20px 0;
+}
+
+.schema-faq-question {
+    display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+}
+
+.schema-faq-answer {
+    margin: 0;
+}
+
+.other-procedures {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.other-procedures a {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 999px;
+    color: var(--color-text-dark-bg);
+    font-weight: 600;
+}
+
+.other-procedures a:hover {
+    background: var(--color-secondary);
+    color: var(--color-text-light-bg);
+}
+
+@media (max-width: 900px) {
+    .procedure-hero {
+        padding-top: 120px;
+    }
+
+    .procedure-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* FIM PÁGINA DE PROCEDIMENTO */
+
+/* Perguntas frequentes no editor clássico: H3 = pergunta, parágrafo = resposta */
+.procedure-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 28px 0 8px;
+}
+
+.procedure-body h3 + p {
+    margin-top: 0;
+}
