@@ -81,6 +81,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <p><?php echo nl2br( esc_html( get_theme_mod( 'estetica_address' ) ) ); ?></p>
                 <?php endif; ?>
 
+                <?php if ( estetica_directions_url() ) : ?>
+                    <p><a href="<?php echo esc_url( estetica_directions_url() ); ?>" target="_blank" rel="noopener">Como chegar&nbsp;<i class="fa-solid fa-location-dot"></i></a></p>
+                <?php endif; ?>
+
                 <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
                     <p><a href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">WhatsApp&nbsp;<i class="fa-brands fa-whatsapp"></i></a></p>
                 <?php endif; ?>
