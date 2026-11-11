@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function estetica_institucional_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
+    add_post_type_support( 'page', 'excerpt' ); // Resumo nas páginas de procedimento.
     add_theme_support( 'custom-logo', array(
         'height'      => 80,
         'width'       => 240,

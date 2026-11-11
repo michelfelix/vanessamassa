@@ -962,3 +962,15 @@ a {
 }
 
 /* FIM PÁGINA DE PROCEDIMENTO */
+
+/* Perguntas frequentes no editor clássico: H3 = pergunta, parágrafo = resposta */
+.procedure-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 28px 0 8px;
+}
+
+.procedure-body h3 + p {
+    margin-top: 0;
+}
