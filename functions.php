@@ -124,6 +124,69 @@ function estetica_institucional_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'estetica_institucional_customize_register' );
 
+/**
+ * Fotos da Dra. Vanessa escolhidas pela biblioteca de mídia (geram tamanhos menores).
+ */
+function estetica_photos_customize_register( $wp_customize ) {
+    $photos = array(
+        'photo_hero'  => 'Foto principal da home',
+        'photo_about' => 'Foto da seção Sobre',
+    );
+
+    foreach ( $photos as $id => $label ) {
+        $wp_customize->add_setting(
+            'estetica_' . $id,
+            array(
+                'default'           => 0,
+                'sanitize_callback' => 'absint',
+            )
+        );
+
+        $wp_customize->add_control(
+            new WP_Customize_Media_Control(
+                $wp_customize,
+                'estetica_' . $id,
+                array(
+                    'label'     => $label,
+                    'section'   => 'estetica_contact',
+                    'mime_type' => 'image',
+                )
+            )
+        );
+    }
+}
+add_action( 'customize_register', 'estetica_photos_customize_register' );
+
+/**
+ * ID da foto: a escolhida no Personalizador ou, se vazia, a do caminho antigo.
+ */
+function estetica_photo_id( $setting, $fallback_path ) {
+    $id = absint( get_theme_mod( 'estetica_' . $setting, 0 ) );
+    if ( $id && wp_attachment_is_image( $id ) ) {
+        return $id;
+    }
+    return attachment_url_to_postid( home_url( $fallback_path ) );
+}
+
+function estetica_photo( $setting, $fallback_path, $size, $attrs = array() ) {
+    $id = estetica_photo_id( $setting, $fallback_path );
+    if ( $id ) {
+        return wp_get_attachment_image( $id, $size, false, $attrs );
+    }
+    return estetica_media_image( $fallback_path, $size, $attrs );
+}
+
+function estetica_photo_url( $setting, $fallback_path, $size ) {
+    $id = estetica_photo_id( $setting, $fallback_path );
+    if ( $id ) {
+        $src = wp_get_attachment_image_url( $id, $size );
+        if ( $src ) {
+            return $src;
+        }
+    }
+    return home_url( $fallback_path );
+}
+
 function estetica_booking_url() {
     return esc_url( get_theme_mod( 'estetica_booking_url', '#agendamento' ) );
 }
@@ -339,7 +402,7 @@ function estetica_local_business_schema() {
         'alternateName' => get_bloginfo( 'name' ),
         'description' => 'Biomédica esteta na ' . $neighborhood . ', ' . $city . '. Harmonização facial e corporal: ' . implode( ', ', $procedure_names ) . '.',
         'url'         => $home,
-        'image'       => estetica_media_url( '/wp-content/uploads/2026/08/perfil2.jpg', 'large' ),
+        'image'       => estetica_photo_url( 'photo_hero', '/wp-content/uploads/2026/08/perfil2.jpg', 'large' ),
         'address'     => $address,
         'areaServed'  => array(
             array( '@type' => 'Place', 'name' => $neighborhood . ', ' . $city ),

@@ -73,7 +73,8 @@ $city         = get_theme_mod( 'estetica_city', 'São Paulo' );
         <div class="container">
             <div class="author-box">
                 <?php
-                echo estetica_media_image(
+                echo estetica_photo(
+                    'photo_hero',
                     '/wp-content/uploads/2026/08/perfil2.jpg',
                     'thumbnail',
                     array(

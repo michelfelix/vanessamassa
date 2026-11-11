@@ -22,7 +22,8 @@ $blog_page_id = get_option( 'page_for_posts' );
             <div class="hero-media">
                     <div class="hero-image">
                         <?php
-                        echo estetica_media_image(
+                        echo estetica_photo(
+                            'photo_hero',
                             '/wp-content/uploads/2026/08/perfil2.jpg',
                             'large',
                             array(
@@ -40,7 +41,7 @@ $blog_page_id = get_option( 'page_for_posts' );
 
     <section class="section" id="sobre">
         <div class="container about-grid">
-            <?php echo '<style> .about-media::before { background-image: url("' . esc_url( estetica_media_url( '/wp-content/uploads/2026/08/perfil1-scaled.jpg', 'large' ) ) . '"); } </style>'; ?>
+            <?php echo '<style> .about-media::before { background-image: url("' . esc_url( estetica_photo_url( 'photo_about', '/wp-content/uploads/2026/08/perfil1-scaled.jpg', 'large' ) ) . '"); } </style>'; ?>
             <div class="about-media">
                 <div aria-hidden="true"></div>
                 <div style="aspect-ratio:4/5;background:#55692C;border-radius:32px;"></div>
