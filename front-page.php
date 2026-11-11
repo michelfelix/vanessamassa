@@ -166,11 +166,6 @@ $blog_page_id = get_option( 'page_for_posts' );
                                 Como chegar
                             </a>
                         <?php endif; ?>
-                        <?php if ( get_theme_mod( 'estetica_whatsapp' ) ) : ?>
-                            <a class="button button--outline" href="https://wa.me/<?php echo esc_attr( get_theme_mod( 'estetica_whatsapp' ) ); ?>?text=Olá, gostaria de tirar uma dúvida." target="_blank" rel="noopener">
-                                WhatsApp
-                            </a>
-                        <?php endif; ?>
                     </div>
                 </div>
 

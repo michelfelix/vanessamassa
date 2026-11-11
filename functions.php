@@ -183,10 +183,33 @@ function estetica_procedure_slug( $procedure ) {
  * Enquanto a página não for criada, mantém a âncora antiga.
  */
 function estetica_procedure_url( $procedure ) {
-    $page = get_page_by_path( 'procedimentos/' . estetica_procedure_slug( $procedure ) );
-    if ( $page && 'publish' === $page->post_status ) {
-        return get_permalink( $page );
+    static $children = null;
+
+    if ( null === $children ) {
+        $children = array();
+        $parent   = get_page_by_path( 'procedimentos' );
+        if ( $parent ) {
+            $children = get_pages( array(
+                'child_of'    => $parent->ID,
+                'post_status' => 'publish',
+            ) );
+        }
     }
+
+    $slug = estetica_procedure_slug( $procedure );
+
+    // 1) slug exato; 2) título igual ao procedimento; 3) slug que começa com o nome (ex.: botox-vila-madalena).
+    foreach ( array( 'slug', 'title', 'prefix' ) as $rule ) {
+        foreach ( $children as $page ) {
+            $match = ( 'slug' === $rule && $page->post_name === $slug )
+                || ( 'title' === $rule && sanitize_title( $page->post_title ) === $slug )
+                || ( 'prefix' === $rule && 0 === strpos( $page->post_name, $slug ) );
+            if ( $match ) {
+                return get_permalink( $page );
+            }
+        }
+    }
+
     return home_url( $procedure['url'] );
 }
 
