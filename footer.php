@@ -28,6 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div>
                 <div class="footer-brand"><?php bloginfo( 'name' ); ?></div>
                 <p>Beleza, cuidado e atendimento personalizado para você.</p>
+                <?php if ( estetica_crbm() ) : ?>
+                    <p class="footer-credential">Dra. Vanessa Massa – Biomédica Esteta – <?php echo esc_html( estetica_crbm() ); ?></p>
+                <?php endif; ?>
             </div>
 
             <div>

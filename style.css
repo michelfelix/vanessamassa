@@ -1066,3 +1066,78 @@ a {
         aspect-ratio: 4 / 5;
     }
 }
+
+/* Registro profissional (CRBM) */
+.credential {
+    margin: -8px 0 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+}
+
+.footer-credential {
+    font-size: 0.82rem;
+    opacity: 0.85;
+}
+
+.procedure-author .container {
+    max-width: 820px;
+}
+
+.author-box {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.author-box img {
+    width: 96px;
+    height: 96px;
+    flex: 0 0 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.author-box p {
+    margin: 0;
+}
+
+.author-box .section-kicker {
+    margin-bottom: 6px;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-primary);
+}
+
+.author-credential {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 12px !important;
+}
+
+.author-bio {
+    line-height: 1.7;
+    margin-bottom: 12px !important;
+}
+
+.author-link {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+    .author-box {
+        flex-direction: column;
+        padding: 24px;
+    }
+}

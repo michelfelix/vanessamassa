@@ -69,6 +69,21 @@ $city         = get_theme_mod( 'estetica_city', 'São Paulo' );
 
     <?php endwhile; ?>
 
+    <section class="procedure-author">
+        <div class="container">
+            <div class="author-box">
+                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/08/perfil2.jpg' ) ); ?>" alt="Dra. Vanessa Massa, biomédica esteta" loading="lazy" width="96" height="96" />
+                <div>
+                    <p class="section-kicker">Responsável técnica</p>
+                    <p class="author-name">Dra. Vanessa Massa</p>
+                    <p class="author-credential">Biomédica esteta<?php echo estetica_crbm() ? ' · ' . esc_html( estetica_crbm() ) : ''; ?></p>
+                    <p class="author-bio">Mais de 6 anos de experiência e mais de 1000 atendimentos em harmonização facial e corporal, com avaliação criteriosa e protocolos individualizados.</p>
+                    <a class="author-link" href="<?php echo esc_url( home_url( '/#sobre' ) ); ?>">Conheça a Dra. Vanessa →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="container">
             <div class="cta">

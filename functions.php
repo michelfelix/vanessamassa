@@ -92,6 +92,10 @@ function estetica_institucional_customize_register( $wp_customize ) {
             'label'   => 'CEP',
             'default' => '',
         ),
+        'crbm' => array(
+            'label'   => 'Registro profissional (ex.: CRBM 42335)',
+            'default' => 'CRBM 42335',
+        ),
         'maps_url' => array(
             'label'   => 'Link do perfil no Google Maps (botão "Como chegar")',
             'default' => '',
@@ -127,6 +131,13 @@ require_once get_template_directory() . '/data/procedures.php';
 /* -------------------------------------------------------------------------
  * SEO local: endereço, mapa, páginas de procedimento e schema.org
  * ---------------------------------------------------------------------- */
+
+/**
+ * Registro profissional exibido no site (Personalizar → Informações do site).
+ */
+function estetica_crbm() {
+    return trim( (string) get_theme_mod( 'estetica_crbm', 'CRBM 42335' ) );
+}
 
 /**
  * Endereço completo em uma linha (usado no mapa e como fallback).
@@ -331,6 +342,18 @@ function estetica_local_business_schema() {
         'knowsAbout' => $business['knowsAbout'],
         'url'        => $home,
     );
+    if ( estetica_crbm() ) {
+        $person['identifier']    = estetica_crbm();
+        $person['hasCredential'] = array(
+            '@type'              => 'EducationalOccupationalCredential',
+            'credentialCategory' => 'Registro profissional',
+            'name'               => estetica_crbm(),
+            'recognizedBy'       => array(
+                '@type' => 'Organization',
+                'name'  => 'Conselho Regional de Biomedicina',
+            ),
+        );
+    }
     if ( get_theme_mod( 'estetica_instagram' ) ) {
         $person['sameAs'] = array( get_theme_mod( 'estetica_instagram' ) );
     }

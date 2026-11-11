@@ -38,6 +38,9 @@ $blog_page_id = get_option( 'page_for_posts' );
             <div>
                 <p class="section-kicker">Sobre mim</p>
                 <h2 class="section-title">Muito prazer, sou a Dra. Vanessa Massa</h2>
+                <?php if ( estetica_crbm() ) : ?>
+                    <p class="credential">Biomédica esteta · <?php echo esc_html( estetica_crbm() ); ?></p>
+                <?php endif; ?>
                 <p class="section-lead">
                     Sou biomédica esteta com mais de 6 anos de experiência na área da saúde estética. Minha missão é proporcionar cuidados personalizados que realcem a beleza natural de cada paciente, promovendo bem-estar e confiança.<br/>
                     <br/>
